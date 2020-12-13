@@ -1,0 +1,26 @@
+body {
+    background-color: #4e8d7c;
+    font-family: 'Fjalla One', sans-serif;
+    color: white;
+    font-size: larger;
+}
+
+hr {
+    border-style: dotted none none none;
+    color: #f3f2da;
+    border-width: 10px;
+    width: 5%;
+}
+img {
+    height: 60%;
+    width: 60%;
+}
+h1 {
+    color: #045762;
+}
+h3 {
+    color: #045762;
+}
+a {
+    color: #045762;
+}
