@@ -2,6 +2,14 @@ h1 {
     font-size: 50px;
     color: tomato;
 }
-img {
+/* img {
     background-color: tomato;
+} */
+
+.bacon {
+    background-color: yellow;
+}
+
+.tomato {
+    background-color: yellowgreen;
 }
