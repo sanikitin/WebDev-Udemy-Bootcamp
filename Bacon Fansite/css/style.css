@@ -2,9 +2,9 @@ h1 {
     font-size: 50px;
     color: tomato;
 }
-/* img {
-    background-color: tomato;
-} */
+img:hover {
+    background-color: gold;
+}
 
 .bacon {
     background-color: yellow;
