@@ -1,15 +1,19 @@
 .top {
+    height: 200px;
+    width: 200px;
     margin: 0;
     background-color: #bedbbb;
 }
 
 .middle {
     height: 200px;
+    width: 200px;
     background-color: #8db596;
 }
 
 .bottom {
     height: 200px;
+    width: 200px;
     background-color: #707070;
 }
 
