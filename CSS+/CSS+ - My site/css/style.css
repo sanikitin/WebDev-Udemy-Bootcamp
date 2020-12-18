@@ -3,18 +3,24 @@
     width: 200px;
     margin: 0;
     background-color: #bedbbb;
+    border: solid 10px;
+    padding: 20px;
 }
 
 .middle {
     height: 200px;
     width: 200px;
     background-color: #8db596;
+    border: solid 20px;
+    margin-left: 260px;
 }
 
 .bottom {
     height: 200px;
     width: 200px;
     background-color: #707070;
+    border: solid 10px;
+    margin-left: 500px;
 }
 
 body {
