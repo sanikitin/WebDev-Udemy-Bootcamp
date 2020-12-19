@@ -1,32 +1,43 @@
 .top {
-    height: 200px;
-    width: 200px;
-    margin: 0;
-    background-color: #bedbbb;
-    border: solid 10px;
-    padding: 20px;
+    background-color: #d0e8f2;
+    position: relative;
+    padding-top: 5%;
 }
 
 .middle {
-    height: 200px;
-    width: 200px;
-    background-color: #8db596;
-    border: solid 20px;
-    margin-left: 260px;
+    background-color: #79a3b1;    
 }
 
 .bottom {
-    height: 200px;
-    width: 200px;
-    background-color: #707070;
-    border: solid 10px;
-    margin-left: 500px;
+    background-color: #456268;
 }
 
 body {
     margin: 0;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    font-size: larger;
 }
 
 h1 {
-    margin-top: 0;
+    margin: 0 auto;
+    font-family: 'Pacifico', cursive;
+}
+
+.cloudandsun {   
+    width: 15%;
+    position: absolute;
+    right: 5%;
+}
+
+.cloud {   
+    width: 15%;
+    position: absolute;
+    left: 15%;
+    bottom: 50%;
+}
+
+.mountains {
+    position: relative;
+    width: 100%;
 }
