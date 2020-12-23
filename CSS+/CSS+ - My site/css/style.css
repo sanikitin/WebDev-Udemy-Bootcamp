@@ -13,15 +13,15 @@
 }
 
 .cloudandsun {   
-    width: 15%;
+    width: 17%;
     position: absolute;
     right: 5%;
 }
 
 .cloud {   
-    width: 15%;
+    width: 25%;
     position: absolute;
-    left: 15%;
+    left: 5%;
     bottom: 50%;
 }
 
@@ -122,6 +122,11 @@
     margin: 3rem 2rem 0 2rem;
     font-size: larger;
     text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+}
+
+.footer-link:hover {
+    color: #fcf8ec;
 }
 
 .footer-copyrating {
@@ -165,7 +170,8 @@ a {
 }
 
 p {
-    line-height: 2;  
+    line-height: 2;
+    font-weight: bold;
 }
 
 
