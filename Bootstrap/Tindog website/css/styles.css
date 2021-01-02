@@ -9,6 +9,25 @@
     padding: 0% 10%;
 }
 
+.navbar-brand {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 3rem;
+    line-height: 1.5;
+    font-weight: 700;
+}
+
+.nav-link {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: 400;
+}
+
+.img-fluid {
+    transform: rotate(25deg);
+    width: 50%;
+}
+
 #title {
     background-color: #ff4c68;
 }
