@@ -9,7 +9,7 @@ body {
     font-weight: 900;
 }
 
-.container-fluid {
+.container-title {
     padding: 0% 10%;
 }
 
@@ -42,4 +42,29 @@ body {
 #title {
     background-color: #ff4c68;
     color: #fff;
+}
+
+.container-features {
+    padding: 10% 10%;
+    text-align: center;
+}
+
+.h3-features {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    font-weight: bold;
+    text-align: center;
+}
+
+.p-features {
+    color: #8f8f8f;
+}
+
+.fas {
+    color: #ef8172;
+}
+
+.fas:hover {
+    color: #ff4c68;
 }
