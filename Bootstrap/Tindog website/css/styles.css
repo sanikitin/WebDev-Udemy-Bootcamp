@@ -9,8 +9,8 @@ h1 {
     font-weight: 900;
 }
 
-.container-title {
-    padding: 0% 10%;
+.container-fluid {
+    padding: 0% 15% 7%;
 }
 
 .navbar {
@@ -30,9 +30,11 @@ h1 {
     font-weight: 400;
 }
 
-.img-fluid {
+.title-img {
     transform: rotate(25deg);
-    width: 45%;
+    width: 15%;
+    position: absolute;
+    left: 65%;
 }
 
 .dwlbtn {
@@ -42,6 +44,11 @@ h1 {
 #title {
     background-color: #ff4c68;
     color: #fff;
+}
+
+#features {
+    position: relative;
+    background-color: #fff;
 }
 
 .container-features {
