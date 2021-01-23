@@ -119,3 +119,31 @@ h2 {
 .pricing-column {
     padding: 3% 2%;
 }
+
+@media (max-width: 1200px) {
+    .title-img {
+        position: static;
+        transform: rotate(0);
+        width: 65%;
+    }
+    #title {
+        text-align: center;
+    }
+}
+
+#cta {
+    background-color: #ff4c68;
+    color: #fff;
+    text-align: center;
+    padding: 5% 20%;
+}
+
+#footer {
+    background-color: #fff;
+    text-align: center;
+    padding: 5% 20%;
+}
+
+.footer-icons {
+    margin: 1%;
+}
