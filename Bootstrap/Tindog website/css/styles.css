@@ -15,6 +15,15 @@ p {
     color: #8f8f8f;
 }
 
+.colored-section {
+    background-color: #ff4c68;
+    color: #fff;
+}
+
+.white-section {
+    background-color: #fff;
+}
+
 .container-fluid {
     padding: 7% 15%;
 }
@@ -40,14 +49,9 @@ p {
 
 /* Title Style */
 
-#title {
-    background-color: #ff4c68;
-    color: #fff;
-    text-align: left;
-}
-
 #title .container-fluid {
     padding: 3% 15% 7%;
+    text-align: left;
 }
 
 .title-img {
@@ -69,7 +73,6 @@ p {
 
 #features {
     position: relative;
-    background-color: #fff;
 }
 
 .features-text {
@@ -89,7 +92,6 @@ p {
 
 #testimonials {  
     background-color: #ef8172;
-    color: #fff;
 }
 
 .testimonials-text {
@@ -134,20 +136,11 @@ p {
 
 /* CTA Style */
 
-#cta {
-    background-color: #ff4c68;
-    color: #fff;
-}
-
 .cta-heading {
     font-size: 3.5rem;
 }
 
 /* Footer Style */
-
-#footer {
-    background-color: #fff;
-}
 
 .footer-icons {
     margin: 1%;
