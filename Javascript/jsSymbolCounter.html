@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let message = prompt ('Write your message');
+// Функция length возвращает длину переменной в символах
+        alert ('You are written ' + message.length + ' and you have ' + (140-message.length) + ' symbols remaining');
+// Функция slice (x,y) обрезает переменную начиная с x и заканчивая, но не включая y
+        alert (message.slice(0,140));
+    </script>
+</body>
+</html>
