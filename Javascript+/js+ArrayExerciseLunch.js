@@ -12,4 +12,4 @@ function whosPaying(names) {
 
         return names[name] + " is going to buy lunch today!";
     /******Don't change the code below*******/    
-    }
+}

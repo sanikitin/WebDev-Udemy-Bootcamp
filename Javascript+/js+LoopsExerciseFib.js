@@ -26,3 +26,28 @@ function fibonacciGenerator(n) {
 
     //Do NOT change any of the code below 👇
 }
+
+// Ещё одно решение
+
+function fibonacciGenerator(n) {
+    //Do NOT change any of the code above 👆
+
+    let fibonacciArray = [];
+
+    if (n === 1) {
+        fibonacciArray = [0];
+    } else if (n === 2) {
+        fibonacciArray = [0, 1];        
+    } else {
+        fibonacciArray = [0, 1]; 
+        for (let index = 2; index < n; index++) {
+            fibonacciArray.push(fibonacciArray[fibonacciArray.length-2]+fibonacciArray[fibonacciArray.length-1]);
+        }
+    }
+
+    return fibonacciArray;
+
+    //Return an array of fibonacci numbers starting from 0.
+
+    //Do NOT change any of the code below 👇
+}
