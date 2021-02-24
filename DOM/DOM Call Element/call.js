@@ -27,3 +27,20 @@ document.querySelector('значение').remove;
 
 // Изменение значения, удаление если уже есть и добавление, если ещё нет
 document.querySelector('значение').toggle;
+
+// Получение списка аттрибутов
+document.querySelector('значение').attributes;
+
+// Получение значения аттрибута
+document.querySelector('значение').getAttribute();
+
+
+// Методы изменения контента
+// Изменение значения HTML кода
+document.querySelector('значение').innerHTML = 'new';
+
+// Изменение значения текста
+document.querySelector('значение').textContent = 'new';
+
+// Изменение значения аттрибута
+document.querySelector('значение').setAttribute('название аттрибута', 'новое значение аттрибута');
