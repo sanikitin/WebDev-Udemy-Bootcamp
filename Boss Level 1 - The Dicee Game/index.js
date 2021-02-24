@@ -11,9 +11,9 @@ let d2 = randomDice();
 document.getElementById("dice2").setAttribute("src", "images/dice" + d2 + ".png");
 
 if (d1 > d2) {
-    document.getElementById("result").textContent = "🚩Player 1 Win!";
-} else if (d1 < d2) {
-    document.getElementById("result").textContent = "Player 2 Win!🚩"
+    document.getElementById("result").textContent = "🚩Player 1 Wins!";
+} else if (d2 < d1) {
+    document.getElementById("result").textContent = "Player 2 Wins!🚩"
 } else {
     document.getElementById("result").textContent = "DRAW!"
 }
