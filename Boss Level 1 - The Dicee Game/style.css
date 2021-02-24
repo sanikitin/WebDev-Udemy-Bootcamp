@@ -1,0 +1,38 @@
+body {
+    background-color: #393E46;
+    text-align: center;
+    margin: 0;
+}
+
+footer {
+    margin-top: 15rem;
+}
+
+h1, p {
+    font-family: 'Reggae One', cursive;
+    color: #4ECCA3;
+}
+
+h1 {
+    margin: 2rem;
+    font-size: 8rem;
+}
+
+p {
+    font-size: 1.5rem;
+    margin: 2rem 0;
+}
+
+.container {
+    margin: 0 12rem;
+}
+
+.dice {
+    display: inline-block;
+    margin: 0 2rem;
+}
+
+.dice-img {
+    max-width: 100%;
+}
+
