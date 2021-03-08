@@ -18,10 +18,10 @@ $(document).keypress(function () {
 
 // Функция рандомно выбирает один из четрых цветов, выбирает значение из первого массива и сохраняет выбор во второй массив. После чего проигрывает анимацию и звук выбора
 function nextSequence() {
-    // Массив набора игрока обнуляется перед каждым уровнем и игрок заново набирает последовательность
+// Массив набора игрока обнуляется перед каждым уровнем и игрок заново набирает последовательность
     userClickedPattern = [];
 
-    // Счетчик уровней
+// Счетчик уровней
     level++;
     $("#level-title").text("Level " + level);
 
@@ -43,17 +43,17 @@ $(".btn").click(function () {
 
     animatePress(userChosenColour);
     playSound(userChosenColour);
-    // Происходит щелчок и отправляется запрос на сравнение
+// Происходит щелчок и отправляется запрос на сравнение
     checkAnswer(userClickedPattern.length - 1);
 });
 
 // Функция проверки выбора
 function checkAnswer(currentLevel) {
-    // Если нажатое и отправленное значение массива === заранее сформированному значению из массива, то ок, если нет, то гг
+// Если нажатое и отправленное значение массива === заранее сформированному значению из массива, то ок, если нет, то гг
     if (gamePattern[currentLevel] === userClickedPattern[currentLevel]) {
         console.log("success");
 
-        // Если на первом этапе все ок и длина массивов совпала, то начинается следующий уровень, но если нет, то ожидание следующего щелчка и ничего не происходит
+// Если на первом этапе все ок и длина массивов совпала, то начинается следующий уровень, но если нет, то ожидание следующего щелчка и ничего не происходит
         if (userClickedPattern.length === gamePattern.length) {
             setTimeout(function () {
                 nextSequence();
@@ -63,6 +63,7 @@ function checkAnswer(currentLevel) {
     } else {
         console.log("wrong");
 
+// Проигрыш
         playSound("wrong");
         $("body").addClass("game-over");
         setTimeout(function () {
@@ -74,6 +75,7 @@ function checkAnswer(currentLevel) {
     }
 }
 
+// Функция сброса счетчиков при проигрыше
 function startOver() {
     level = 0;
     startGame = false;
