@@ -1,0 +1,15 @@
+{
+  "name": "intronpm",
+  "version": "1.0.0",
+  "description": "Intro my first npm",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Nikitin Sergey",
+  "license": "ISC",
+  "dependencies": {
+    "superheroes": "^3.0.0",
+    "supervillains": "^3.0.0"
+  }
+}
