@@ -2,7 +2,7 @@
 //The first parameter should be the weight and the second should be the height.
 
 function bmiCalculator (weight, height) {
-    let bmi = Math.round(weight/(Math.pow(height, 2)));
+    let bmi = Math.round(weight / Math.pow(height, 2) * 10000);
     if (bmi<18.5) {
         return "Your BMI is " + bmi + ", so you are underweight."
     } if (bmi>24.9) {
