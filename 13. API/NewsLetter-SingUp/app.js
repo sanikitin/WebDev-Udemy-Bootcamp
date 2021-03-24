@@ -47,10 +47,20 @@ app.post("/", function (req, res) {
         response.on("data", function (data) {
             console.log(JSON.parse(data));
         })
+
+        if (response.statusCode===200) {
+            res.sendFile(__dirname+"/success.html");
+        } else {
+            res.sendFile(__dirname+"/failure.html");
+        }
     })
 
     request.write(jsonData);
     request.end();
+});
+
+app.post("/failure", function (req, res) {
+    res.redirect("/");
 });
 
 app.listen(port, function (port) {
