@@ -63,6 +63,7 @@ app.post("/failure", function (req, res) {
     res.redirect("/");
 });
 
-app.listen(port, function (port) {
+// Порт для Heroku и для локальной проверки
+app.listen(process.env.PORT || port, function () {
     console.log("Server is running on port 3000");
 });
