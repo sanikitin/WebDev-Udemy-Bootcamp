@@ -1,33 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!-- Подключение частей верхних и нижних шаблонов через include в ejs -->
+<%- include('header'); -%>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To Do List</title>
-</head>
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %> - ToDo List
+        </h1>
+    </div>
+    <!-- Цикл пробегается по всем элементам массива и для каждого элемента создаёт новый пункт списка -->
+    <div class="box">
+        <p>To Do</p>
+        <% for (let index=0; index < newListItems.length; index++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[index] %></p>
+            </div>
+            <% } %>
 
-<body>
+                <form class="item" action="/" method="post">
+                    <input type="text" name="newInput" placeholder="New Item" autocomplete="off">
+                    <button type="submit" name="list" value=<%=listTitle %>>+</button>
+                    <!-- Значение которое передает кнопка с именем list и value определяет на какую страницу грузить новый айтем -->
+                </form>
+    </div>
 
-    <% if(dayToday === "Sunday" || dayToday === "Saturday") { %>
-    <h1 style="color: green"><%= dayToday %> - ToDo List</h1>
-    <% } else { %>
-    <h1 style="color: blue"><%= dayToday %> - ToDo List</h1>
-    <% } %>
-<!-- Цикл пробегается по всем элементам массива и для каждого элемента создаёт новый пункт списка -->
-    <p>List of to do</p>
-    <ul>
-        <% for (let index = 0; index < newListItems.length; index++) { %>
-            <li><%= newListItems[index] %></li>
-        <% } %>
-    </ul>
-
-    <form action="/" method="post">
-        <input type="text" name="newInput">
-        <button type="submit" name="button">Add</button>
-    </form>   
-
-</body>
-
-</html>
+<%- include('footer'); -%>
