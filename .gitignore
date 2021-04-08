@@ -115,3 +115,12 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+
+.DS_Store
+*.log*
+doc/*.html
+node_modules
+*.code-workspace
+*.sublime-project
+*.sublime-workspace
