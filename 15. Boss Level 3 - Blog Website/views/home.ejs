@@ -5,9 +5,9 @@
 <p><%= homeStartingContent %> </p>
 
 <% posts.forEach(function (post) { %>
-    <div class="">
+    <div>
         <h2><%= post.postTitle %></h2>
-        <p><%= post.postText %></p>
+        <p><%= post.postText.slice(0, 100)+"..."+" " %><a href="/posts/<%=post.postTitle%>">Read More</a></p> 
     </div>
     <% }); %>
 
