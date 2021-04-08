@@ -28,7 +28,7 @@ app.get("/posts/:postName", function (req, res) {
     const title = _.lowerCase(post.postTitle);
 
     if (title === postName) {
-      console.log("Match found!");
+      res.render("post", {postName: post.postTitle, postText: post.postText});
     } else {
       console.log("Match not found!");
     }
