@@ -1,5 +1,6 @@
 // Подключение mongoose в 2 строки
 
+const mongodb = require("mongodb");
 const mongoose = require("mongoose");
 
 mongoose.connect(
@@ -41,13 +42,33 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 // fruit.save();
 
 // Вывод элементов коллекции
-// Fruit.find(function (err, fruits) {
+Fruit.find(function (err, fruits) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log(fruits);
+    // Закрытие соединения с базой данных после выполнения операций
+    mongoose.connection.close();
+  }
+});
+
+// Обновление
+
+// Fruit.updateOne({ id: 1 }, { name: "Limon" }, function (err) {
 //   if (err) {
 //     console.log(err);
 //   } else {
-//     console.log(fruits);
-//     // Закрытие соединения с базой данных после выполнения операций
-//     mongoose.connection.close();
+//     console.log("Success");
+//   }
+// });
+
+// Удаление
+
+// Fruit.deleteOne({ name: "Apple" }, function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Success");
 //   }
 // });
 
@@ -76,5 +97,14 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 //     fruits.forEach(function (fruit) {
 //       console.log(fruit.name);
 //     });
+//   }
+// });
+
+// Next Challenge, need delete element
+// Fruit.deleteOne({ id: "6080757d913c1e69a0f0c8a0" }, function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Success");
 //   }
 // });
