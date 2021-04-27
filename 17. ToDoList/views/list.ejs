@@ -1,0 +1,26 @@
+<!-- Подключение частей верхних и нижних шаблонов через include в ejs -->
+<%- include('header'); -%>
+
+    <div class="box" id="heading">
+        <h1>
+            <%= listTitle %> - ToDo List
+        </h1>
+    </div>
+    <!-- Цикл пробегается по всем элементам массива и для каждого элемента создаёт новый пункт списка -->
+    <div class="box">
+        <p>To Do</p>
+        <% for (let index=0; index < newListItems.length; index++) { %>
+            <div class="item">
+                <input type="checkbox">
+                <p><%= newListItems[index] %></p>
+            </div>
+            <% } %>
+
+                <form class="item" action="/" method="post">
+                    <input type="text" name="newInput" placeholder="New Item" autocomplete="off">
+                    <button type="submit" name="list" value=<%=listTitle %>>+</button>
+                    <!-- Значение которое передает кнопка с именем list и value определяет на какую страницу грузить новый айтем -->
+                </form>
+    </div>
+
+<%- include('footer'); -%>
