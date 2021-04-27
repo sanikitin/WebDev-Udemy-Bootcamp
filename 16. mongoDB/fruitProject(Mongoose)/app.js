@@ -42,15 +42,15 @@ const Fruit = mongoose.model("Fruit", fruitSchema);
 // fruit.save();
 
 // Вывод элементов коллекции
-Fruit.find(function (err, fruits) {
-  if (err) {
-    console.log(err);
-  } else {
-    console.log(fruits);
-    // Закрытие соединения с базой данных после выполнения операций
-    mongoose.connection.close();
-  }
-});
+// Fruit.find(function (err, fruits) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(fruits);
+//     // Закрытие соединения с базой данных после выполнения операций
+//     mongoose.connection.close();
+//   }
+// });
 
 // Обновление
 
@@ -74,16 +74,18 @@ Fruit.find(function (err, fruits) {
 
 // Challenge, new Schema and collections, humans - name and age, 1 element - John 37
 
-// const peopleSchema = new mongoose.Schema({
-//     name: String,
-//     age: Number
-// });
+const peopleSchema = new mongoose.Schema({
+  name: String,
+  age: Number,
+  favoriteFruit: fruitSchema,
+});
 
-// const People = mongoose.model("People", peopleSchema);
+const People = mongoose.model("People", peopleSchema);
 
 // const people = new People({
-//     name: "John",
-//     age: 37
+//   name: "John",
+//   age: 37,
+//   favoriteFruit: "Kiwi",
 // });
 
 // people.save();
@@ -106,5 +108,33 @@ Fruit.find(function (err, fruits) {
 //     console.log(err);
 //   } else {
 //     console.log("Success");
+//   }
+// });
+
+// Next Challenge, need add John a new favorite fruit
+
+// const mango = new Fruit({
+//   name: "Mango",
+//   rating: 6,
+//   review: "Very nice",
+// });
+
+// mango.save();
+
+// People.updateOne({ name: "John" }, { favoriteFruit: mango }, function (err) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log("Success");
+//   }
+// });
+
+// People.find(function (err, peoples) {
+//   if (err) {
+//     console.log(err);
+//   } else {
+//     console.log(peoples);
+//     // Закрытие соединения с базой данных после выполнения операций
+//     mongoose.connection.close();
 //   }
 // });
