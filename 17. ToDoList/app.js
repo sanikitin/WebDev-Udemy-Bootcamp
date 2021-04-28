@@ -29,10 +29,6 @@ const item3 = new Item({
 
 const defaultItem = [item1, item2, item3]; // Создание пунктов по умолчанию и массива из них
 
-Item.insertMany(defaultItem, function (err) {
-  console.log(err);
-}); // Добавление массива в бд
-
 const port = 3000;
 
 let newAdds = [];
@@ -44,8 +40,11 @@ app.set("view engine", "ejs"); // Подключение EJS
 
 app.get("/", function (req, res) {
   Item.find({}, function (err, foundItems) {
-    if (err) {
-      console.log(err);
+    if (foundItems.length===0) { // Проверка на пустой список
+      Item.insertMany(defaultItem, function (err) { // Вставка элементов по умолчанию
+        console.log(err);
+      }); // Добавление массива в бд
+      res.redirect("/"); // Отрисовка странциы снова для отображения элементов
     } else {
       res.render("list", { listTitle: "Today", newListItems: foundItems }); // Отправка данных для рендера страницы в EJS, добавили отправку нового значения списка дел.
     }
@@ -53,16 +52,14 @@ app.get("/", function (req, res) {
 });
 
 app.post("/", function (req, res) {
-  let newAdd = req.body.newInput; // Если мы не отправили с сайта запрос, то эта переменная не будет создана и будет ошибка
+  const itemName = req.body.newInput; // Захват нового элемента
+  
+  const newItem = new Item({ // Создание нового объекта в бд
+    name: itemName,
+  });
 
-  if (req.body.list === "Work") {
-    // Условие для загрузки другой страницы с задачами по работе
-    workAdds.push(newAdd);
-    res.redirect("/work");
-  } else {
-    newAdds.push(newAdd); // Добавляем элемент в массив, теперь все новые дела хранятся в одном месте
-    res.redirect("/"); // Перенаправляем запрос, чтобы при первой загрузке здесь создалась пустая переменная и не возникло ошибки, после чего отправялем снова на домашнюю страницу
-  }
+  newItem.save(); // Сохранение в бд
+  res.redirect("/"); // Отрисовка странциы снова для отображения элементов
 });
 
 // Создание рендера для запроса нового листа для работы

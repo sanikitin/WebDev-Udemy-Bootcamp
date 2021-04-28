@@ -10,10 +10,12 @@
     <div class="box">
         <p>To Do</p>
         <% newListItems.forEach(item => { %>
-            <div class="item">
-                <input type="checkbox">
-                <p><%= item.name %></p>
-            </div>
+                <form action="" method="post">
+                    <div class="item">
+                        <input type="checkbox">
+                        <p><%= item.name %></p>
+                    </div>
+                </form>
             <% }); %>
 
                 <form class="item" action="/" method="post">
