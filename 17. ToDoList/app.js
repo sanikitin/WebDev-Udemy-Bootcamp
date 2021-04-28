@@ -2,10 +2,36 @@
 
 const express = require("express"); // Подключение Express
 const app = express();
-
 const bodyParser = require("body-parser"); // Подключение парсера HTML
+const mongoose = require("mongoose"); // Подключение mongodb
 
-const date = require(__dirname + "/date"); // Подключение самодельного модуля даты
+mongoose.connect("mongodb://localhost:27017/todolistDB", {
+  useNewUrlParser: true,
+}); // Создание базы данных
+
+const itemsSchema = {
+  name: String,
+}; // Создание схемы базы данных
+
+const Item = mongoose.model("Item", itemsSchema); // Создание модели
+
+const item1 = new Item({
+  name: "Create",
+});
+
+const item2 = new Item({
+  name: "Update",
+});
+
+const item3 = new Item({
+  name: "Delete",
+});
+
+const defaultItem = [item1, item2, item3]; // Создание пунктов по умолчанию и массива из них
+
+Item.insertMany(defaultItem, function (err) {
+  console.log(err);
+}); // Добавление массива в бд
 
 const port = 3000;
 
@@ -17,9 +43,13 @@ app.use(express.static("public")); // Подключение локальных 
 app.set("view engine", "ejs"); // Подключение EJS
 
 app.get("/", function (req, res) {
-  let day = date.getDate(); // Вызов функции из самодельного модуля
-
-  res.render("list", { listTitle: day, newListItems: newAdds }); // Отправка данных для рендера страницы в EJS, добавили отправку нового значения списка дел.
+  Item.find({}, function (err, foundItems) {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render("list", { listTitle: "Today", newListItems: foundItems }); // Отправка данных для рендера страницы в EJS, добавили отправку нового значения списка дел.
+    }
+  }); // Вывод результатов из бд
 });
 
 app.post("/", function (req, res) {
