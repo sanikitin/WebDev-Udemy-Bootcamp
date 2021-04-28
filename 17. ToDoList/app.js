@@ -62,6 +62,19 @@ app.post("/", function (req, res) {
   res.redirect("/"); // Отрисовка странциы снова для отображения элементов
 });
 
+app.post("/delete", function (req, res) {
+  const checkItemId = req.body.checkbox; // Захват данных со страницы
+
+  Item.findByIdAndRemove(checkItemId, function (err) { // с помощью id удаление из базы 
+      if (err) {
+        console.log(err);
+      } else {
+        console.log("Success");
+        res.redirect("/"); // Отрисовка странциы снова для отображения элементов
+      }
+    });
+});
+
 // Создание рендера для запроса нового листа для работы
 app.get("/work", function (req, res) {
   res.render("list", { listTitle: "Work List", newListItems: workAdds });
