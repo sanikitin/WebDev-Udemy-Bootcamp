@@ -4,8 +4,13 @@ const express = require("express"); // Подключение Express
 const app = express();
 const bodyParser = require("body-parser"); // Подключение парсера HTML
 const mongoose = require("mongoose"); // Подключение mongodb
+const _ = require("lodash"); // Подключение lodash
 
-mongoose.connect("mongodb+srv://admin-sergey:password@cluster0.gqtnz.mongodb.net/todolistDB", {
+app.use(bodyParser.urlencoded({ extended: true })); // Установка настроек парсера
+app.use(express.static("public")); // Подключение локальных файлов
+app.set("view engine", "ejs"); // Подключение EJS
+
+mongoose.connect("mongodb+srv://admin-sergey:!pass!@cluster0.gqtnz.mongodb.net/todolistDB", {
   useNewUrlParser: true,
 }); // Создание базы данных
 
@@ -35,14 +40,6 @@ const listSchema = {
 } // Создание нового документа для новой маршрута
 
 const List = mongoose.model("List", listSchema); // создание модели по новому документу
-
-
-let newAdds = [];
-let workAdds = [];
-
-app.use(bodyParser.urlencoded({ extended: true })); // Установка настроек парсера
-app.use(express.static("public")); // Подключение локальных файлов
-app.set("view engine", "ejs"); // Подключение EJS
 
 app.get("/", function (req, res) {
   Item.find({}, function (err, foundItems) {

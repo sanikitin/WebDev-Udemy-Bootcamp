@@ -1,10 +1,8 @@
 <!-- Подключение частей верхних и нижних шаблонов через include в ejs -->
-<%- include('header'); -%>
+<%- include('header') -%>
 
     <div class="box" id="heading">
-        <h1>
-            <%= listTitle %> - ToDo List
-        </h1>
+        <h1><%= listTitle %> - ToDo List</h1>
     </div>
     <!-- Цикл пробегается по всем элементам массива и для каждого элемента создаёт новый пункт списка -->
     <div class="box">
@@ -14,9 +12,9 @@
                 <div class="item">
                     <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>">
                     <!-- onchange позволяет отправлять данные при изменении чекбокса, value позволит найти элемент-->
-                    <p><%= item.name %></p>
-                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                    <p><%= item.name %></p>                    
                 </div>
+                <input type="hidden" name="listName" value="<%= listTitle %>"></input>
             </form>
             <% }); %>
 
