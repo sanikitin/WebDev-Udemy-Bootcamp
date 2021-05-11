@@ -9,14 +9,17 @@
     <!-- Цикл пробегается по всем элементам массива и для каждого элемента создаёт новый пункт списка -->
     <div class="box">
         <p>To Do</p>
-        <% newListItems.forEach(item => { %>
-                <form action="/delete" method="post">
-                    <div class="item">
-                        <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>"> 
-                        <!-- onchange позволяет отправлять данные при изменении чекбокса, value позволит найти элемент-->
-                        <p><%= item.name %></p>
-                    </div>
-                </form>
+        <% newListItems.forEach(item=> { %>
+            <form action="/delete" method="post">
+                <div class="item">
+                    <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>">
+                    <!-- onchange позволяет отправлять данные при изменении чекбокса, value позволит найти элемент-->
+                    <p>
+                        <%= item.name %>
+                    </p>
+                    <input type="hidden" name="listName" value="<%= listTitle %>"></input>
+                </div>
+            </form>
             <% }); %>
 
                 <form class="item" action="/" method="post">
@@ -26,4 +29,4 @@
                 </form>
     </div>
 
-<%- include('footer'); -%>
+    <%- include('footer'); -%>
