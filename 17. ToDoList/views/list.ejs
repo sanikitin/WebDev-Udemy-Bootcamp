@@ -14,9 +14,7 @@
                 <div class="item">
                     <input type="checkbox" onChange="this.form.submit()" name="checkbox" value="<%= item._id %>">
                     <!-- onchange позволяет отправлять данные при изменении чекбокса, value позволит найти элемент-->
-                    <p>
-                        <%= item.name %>
-                    </p>
+                    <p><%= item.name %></p>
                     <input type="hidden" name="listName" value="<%= listTitle %>"></input>
                 </div>
             </form>

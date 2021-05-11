@@ -5,7 +5,7 @@ const app = express();
 const bodyParser = require("body-parser"); // Подключение парсера HTML
 const mongoose = require("mongoose"); // Подключение mongodb
 
-mongoose.connect("mongodb://localhost:27017/todolistDB", {
+mongoose.connect("mongodb+srv://admin-sergey:password@cluster0.gqtnz.mongodb.net/todolistDB", {
   useNewUrlParser: true,
 }); // Создание базы данных
 
@@ -36,9 +36,6 @@ const listSchema = {
 
 const List = mongoose.model("List", listSchema); // создание модели по новому документу
 
-
-
-const port = 3000;
 
 let newAdds = [];
 let workAdds = [];
@@ -131,6 +128,8 @@ app.get("/about", function (req, res) {
   res.render("about");
 });
 
-app.listen(port, function () {
-  console.log("Server is running on port " + port);
-});
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+app.listen(port);
